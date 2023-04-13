@@ -1,0 +1,87 @@
+.topBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position : absolute;
+    top:0;
+    left : 0;
+    width: 100%;
+    height : 80px;
+    padding-left: 25px;
+    padding-right: 25px;
+    .nameContent{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap : 10px;
+        img{
+            width: 40px;
+            height: 40px;
+            transform-origin: center;
+        }
+        h1{
+            color : white;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+    .nameContent:hover{
+        cursor: pointer;
+    }
+    .navButton{
+        min-width: 300px;
+        display: flex;
+        justify-content: space-between;
+        button{
+            color : white;
+            font-size: 13px;
+            border : 0;
+            background: none;
+            text-transform: uppercase;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        .selected{
+            color : grey;
+        }
+    }
+    .navButtonMobile{
+        display: none;
+        .selected{
+            color : grey;
+        }
+    }
+}
+
+@media screen and (max-width : 600px){
+    .topBar{
+        .navButton{
+            display: none;
+        }
+        .navButtonMobile{
+            display: block;
+            button{
+                border : 0;
+                background: none;
+            }
+            .buttons{
+                position: absolute;
+                left: 0;
+                margin-top : 10px;
+                width: 100%;
+                background-color: #fff;
+                height : 40px;
+                display: none;
+                button{
+                    text-transform: uppercase;
+                }
+            }
+            .buttons.active{
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}
